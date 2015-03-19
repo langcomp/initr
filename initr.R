@@ -20,8 +20,12 @@ install_if_not_already_cran(c(
   'dplyr',
   'ggplot2',
   'ggthemes',
+  'grid',
+  'gridExtra',
   'Hmisc',
   'lme4',
+  'MASS',
+  'mixtools',
   'stringr',
   'tidyr'
 ))
