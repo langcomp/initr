@@ -1,7 +1,11 @@
-## first update currently installed packages
+## update currently installed packages
 update.packages(ask = FALSE)
 
-## next install CRAN packages
+## optimize building packages from source
+makeflag <- paste0("-j", parallel::detectCores()/2)
+Sys.setenv(MAKEFLAGS = makeflag)
+
+## install CRAN packages
 install_if_not_already_cran <- function(package_list) {
   installed <-
     suppressMessages(
@@ -31,8 +35,12 @@ install_if_not_already_cran(c(
   'tidyr'
 ))
 
-## last, use devtools for github packages
+## use devtools for github packages
 devtools::install_github(c(
   'kbicknell/lmer.slimr',
   'langcomp/ggintervals'
 ))
+
+## stan
+source('http://mc-stan.org/rstan/install.R', echo = TRUE, max.deparse.length = 2000)
+install_rstan()
