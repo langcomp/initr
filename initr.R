@@ -18,6 +18,7 @@ install_if_not_already_cran(c(
   'devtools',
   'doParallel',
   'dplyr',
+  'rjags',
   'ggplot2',
   'ggthemes',
   'grid',
